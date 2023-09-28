@@ -725,7 +725,7 @@ class LaunchPointList(ctx: Context) {
             if (specialEntries.containsKey(comp)) {
                 type = specialEntries[comp]!! // WI-FI
             }
-            if (info.activityInfo != null) {
+            if (info.activityInfo != null && info.activityInfo.packageName != "com.amazon.tv.launcher") { // KFTV Settings is special case
                 lp = LaunchPoint(mContext, pkgMan, info, false, type)
                 lp.addLaunchIntentFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK)
                 // lp.setPriority(0);
