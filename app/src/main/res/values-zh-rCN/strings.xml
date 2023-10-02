@@ -147,7 +147,6 @@
     <string name="notification_card_view_description_title_label_content">"%1$s  - %2$s：%3$s"</string>
     <string name="notification_text">保持启动器在内存中运行</string>
     <string name="notifications">通知</string>
-    <string name="not_set">未设置</string>
     <string name="now_playing_card_paused">已暂停</string>
     <string name="now_playing_card_playing">现正播放</string>
     <string name="now_playing_card_stopped">已停止</string>
@@ -169,8 +168,6 @@
     <string name="search_hint_text">搜索电影、电视节目及其他内容</string>
     <string name="search_menu_title">搜索</string>
     <string name="select_app_customize_rows_title">自定义主屏幕</string>
-    <string name="select_app_order_action_description_fixed">自定义排序</string>
-    <string name="select_app_order_action_description_recency">新近度排序</string>
     <string name="select_app_order_action_title">整理应用和游戏</string>
     <string name="select_app_order_content_title">整理应用和游戏</string>
     <string name="select_wallpaper_action_desc">选择您喜欢的背景图</string>

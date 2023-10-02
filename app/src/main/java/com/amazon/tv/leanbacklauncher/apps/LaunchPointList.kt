@@ -64,8 +64,10 @@ class LaunchPointList(ctx: Context) {
                         ?.contains("com.amazon.tv.leanbacklauncher.MainActivity") == true -> true
                     point?.toString()
                         ?.contains("com.amazon.tv.launcher/.ui.DebugActivity") == true -> true
-                    point?.activityInfo?.packageName?.startsWith("com.amazon.avod") == true -> true
-                    point?.activityInfo?.packageName?.startsWith("com.amazon.bueller") == true -> true
+                    point?.toString()
+                        ?.contains("com.samabox.dashboard/.ui.apps.MainActivity") == true -> true
+                    point?.activityInfo?.packageName?.startsWith("com.amazon.avod") == true -> true // FTV Video Player
+                    point?.activityInfo?.packageName?.startsWith("com.amazon.ftv.profilepicker") == true -> true
                     point?.activityInfo?.packageName?.startsWith("com.amazon.ftv.screensaver") == true -> true
                     else -> false
                 }
@@ -178,7 +180,10 @@ class LaunchPointList(ctx: Context) {
             val allLaunchPoints: MutableList<ResolveInfo> = ArrayList()
             if (tvLaunchPoints.size > 0) {
                 for (itemTvLaunchPoint in tvLaunchPoints) {
-                    if (itemTvLaunchPoint.activityInfo != null && itemTvLaunchPoint.activityInfo.packageName != null && itemTvLaunchPoint.activityInfo.name != null) {
+                    if (itemTvLaunchPoint.activityInfo != null &&
+                        itemTvLaunchPoint.activityInfo.packageName != null &&
+                        itemTvLaunchPoint.activityInfo.name != null &&
+                        !rawFilter.include(itemTvLaunchPoint)) {
                         rawComponents[itemTvLaunchPoint.activityInfo.packageName] =
                             itemTvLaunchPoint.activityInfo.name
                         allLaunchPoints.add(itemTvLaunchPoint)
@@ -212,10 +217,10 @@ class LaunchPointList(ctx: Context) {
             return launcherItems
         }
 
-        override fun onPostExecute(launcherItems: List<LaunchPoint>?) {
+        override fun onPostExecute(result: List<LaunchPoint>?) {
             synchronized(mLock) {
                 mAllLaunchPoints = ArrayList()
-                launcherItems?.let {
+                result?.let {
                     mAllLaunchPoints.addAll(it)
                 }
             }
