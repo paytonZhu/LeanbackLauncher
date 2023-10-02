@@ -73,6 +73,7 @@ class LaunchPointList(ctx: Context) {
                         ?.contains("com.samabox.dashboard/.ui.apps.MainActivity") == true -> true
 
                     point?.activityInfo?.packageName?.startsWith("com.amazon.avod") == true -> true // FTV Video Player
+                    point?.activityInfo?.packageName?.startsWith("com.amazon.ags.app") == true -> true // Game Circle
                     point?.activityInfo?.packageName?.startsWith("com.amazon.ftv.profilepicker") == true -> true
                     point?.activityInfo?.packageName?.startsWith("com.amazon.ftv.screensaver") == true -> true
                     else -> false
