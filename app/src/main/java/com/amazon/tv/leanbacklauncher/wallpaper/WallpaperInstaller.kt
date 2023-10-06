@@ -76,7 +76,7 @@ class WallpaperInstaller private constructor(context: Context) {
             }
             // default background
             if (systemBg == null) systemBg =
-                if (Build.BRAND == "Amazon" && Build.VERSION.RELEASE == "7") {
+                if (Build.BRAND == "Amazon" && Build.VERSION.RELEASE == "7.1.2") {
                     ResourcesCompat.getDrawable(resources, R.drawable.bg_ftv_blue, null)
                 } else if (Build.BRAND == "Amazon" && Build.VERSION.RELEASE == "9") {
                     ResourcesCompat.getDrawable(resources, R.drawable.bg_ftv_gray, null)
